@@ -39,12 +39,27 @@ $routes->get('/', 'Home::index');
 $routes->post('/registrasi', 'RegistrasiController::registrasi');
 $routes->post('/login', 'LoginController::login');
 
+
 $routes->group('simpan', function ($routes) {
     $routes->post('/', 'SimpananController::simpan');
     $routes->get('/', 'SimpananController::semua_simpanan');
     $routes->get('(:segment)', 'SimpananController::detail_simpanan/$1');
     $routes->put('(:segment)', 'SimpananController::tarik_simpanan/$1');
 });
+
+$routes->get('/total_simpanan', 'SimpananController::total_simpanan');
+
+$routes->group('pinjam', function ($routes) {
+    $routes->post('/', 'PinjamanController::pinjam');
+    $routes->get('/', 'PinjamanController::semua_pinjaman');
+    $routes->get('(:segment)', 'PinjamanController::detail_pinjaman/$1');
+    $routes->put('(:segment)', 'PinjamanController::tarik_pinjaman/$1');
+});
+$routes->get('/total_pinjaman', 'PinjamanController::total_pinjaman');
+
+$routes->get('/selisih', 'PinjamanController::selisih');
+
+$routes->get('/transaksi', 'TransaksiController::semua_transaksi');
 
 /*
  * --------------------------------------------------------------------

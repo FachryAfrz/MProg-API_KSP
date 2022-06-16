@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\MSimpanan;
+use App\Models\MTransaksi;
 
 class SimpananController extends RestfulController
 {
@@ -14,10 +15,23 @@ class SimpananController extends RestfulController
       'nama_user' => $this->request->getVar('nama_user'),
       'jenis_simpanan' => $this->request->getVar('jenis_simpanan'),
       'nominal_simpanan' => $this->request->getVar('nominal_simpanan'),
+      'tanggal_simpanan' => time(),
     ];
 
     $model = new MSimpanan();
     $model->insert($data);
+
+    $dataTransaksi = [
+      'id_transaksi' => $data['id_simpanan'],
+      'jenis_transaksi' => 'Simpanan',
+      'nama_user' => $data['nama_user'],
+      'nominal_transaksi' => $data['nominal_simpanan'],
+      'tanggal_transaksi' => $data['tanggal_simpanan'],
+
+    ];
+
+    $modelTransaksi = new MTransaksi();
+    $modelTransaksi->insert($dataTransaksi);
 
     $simpanan = $model->find($model->getInsertID());
     return $this->responseHasil(200, true, $simpanan);
@@ -27,6 +41,13 @@ class SimpananController extends RestfulController
   {
     $model = new MSimpanan();
     $simpanan = $model->findAll();
+    return $this->responseHasil(200, true, $simpanan);
+  }
+
+  public function total_simpanan()
+  {
+    $model = new MSimpanan();
+    $simpanan = $model->select('sum(nominal_simpanan) as nominal_simpanan')->first();
     return $this->responseHasil(200, true, $simpanan);
   }
 
