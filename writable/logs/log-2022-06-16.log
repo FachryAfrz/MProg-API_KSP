@@ -1,0 +1,8 @@
+ERROR - 2022-06-16 07:53:14 --> Column 'nama_depan' cannot be null
+ERROR - 2022-06-16 07:54:08 --> Column 'nama_depan' cannot be null
+ERROR - 2022-06-16 07:54:24 --> Column 'nama_depan' cannot be null
+ERROR - 2022-06-16 07:56:28 --> Column 'nama_depan' cannot be null
+ERROR - 2022-06-16 08:16:46 --> Unknown column 'nama_depan' in 'field list'
+ERROR - 2022-06-16 08:21:11 --> Unknown column 'nama_depan' in 'field list'
+ERROR - 2022-06-16 08:24:42 --> Unknown column 'nama' in 'field list'
+ERROR - 2022-06-16 08:24:52 --> Unknown column 'nama' in 'field list'

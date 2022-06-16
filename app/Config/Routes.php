@@ -36,6 +36,15 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->post('/registrasi', 'RegistrasiController::registrasi');
+$routes->post('/login', 'LoginController::login');
+
+$routes->group('simpan', function ($routes) {
+    $routes->post('/', 'SimpananController::simpan');
+    $routes->get('/', 'SimpananController::semua_simpanan');
+    $routes->get('(:segment)', 'SimpananController::detail_simpanan/$1');
+    $routes->put('(:segment)', 'SimpananController::tarik_simpanan/$1');
+});
 
 /*
  * --------------------------------------------------------------------
