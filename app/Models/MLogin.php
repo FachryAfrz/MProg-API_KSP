@@ -6,6 +6,6 @@ use CodeIgniter\Model;
 
 class MLogin extends Model
 {
-  protected $table = 'user';
-  protected $allowedFields = ['email', 'password'];
+  protected $table = 'user_token';
+  protected $allowedFields = ['user_id', 'auth_key'];
 }

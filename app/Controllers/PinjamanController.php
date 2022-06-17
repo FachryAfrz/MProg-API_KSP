@@ -78,7 +78,7 @@ class PinjamanController extends RestfulController
     return $this->responseHasil(200, true, $pinjaman);
   }
 
-  public function tarik_pinjaman($id_pinjaman)
+  public function angsur_pinjaman($id_pinjaman)
   {
     $model = new MPinjaman();
 

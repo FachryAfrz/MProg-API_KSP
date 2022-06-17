@@ -53,7 +53,7 @@ $routes->group('pinjam', function ($routes) {
     $routes->post('/', 'PinjamanController::pinjam');
     $routes->get('/', 'PinjamanController::semua_pinjaman');
     $routes->get('(:segment)', 'PinjamanController::detail_pinjaman/$1');
-    $routes->put('(:segment)', 'PinjamanController::tarik_pinjaman/$1');
+    $routes->put('(:segment)', 'PinjamanController::angsur_pinjaman/$1');
 });
 $routes->get('/total_pinjaman', 'PinjamanController::total_pinjaman');
 
