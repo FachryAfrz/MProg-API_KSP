@@ -15,7 +15,7 @@ class SimpananController extends RestfulController
       'nama_user' => $this->request->getVar('nama_user'),
       'jenis_simpanan' => $this->request->getVar('jenis_simpanan'),
       'nominal_simpanan' => $this->request->getVar('nominal_simpanan'),
-      'tanggal_simpanan' => time(),
+      'tanggal_simpanan' => date('d M', time()),
     ];
 
     $model = new MSimpanan();

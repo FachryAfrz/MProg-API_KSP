@@ -21,7 +21,7 @@ class PinjamanController extends RestfulController
         'nama_user' => $this->request->getVar('nama_user'),
         'jenis_pinjaman' => $this->request->getVar('jenis_pinjaman'),
         'nominal_pinjaman' => $this->request->getVar('nominal_pinjaman'),
-        'tanggal_pinjaman' => time(),
+        'tanggal_pinjaman' => date('d M', time()),
       ];
 
       $model = new MPinjaman();
