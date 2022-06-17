@@ -40,6 +40,7 @@ class SimpananController extends RestfulController
   public function semua_simpanan()
   {
     $model = new MSimpanan();
+    $model->orderBy('id', 'DESC');
     $simpanan = $model->findAll();
     return $this->responseHasil(200, true, $simpanan);
   }

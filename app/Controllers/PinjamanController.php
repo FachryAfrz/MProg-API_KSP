@@ -47,6 +47,7 @@ class PinjamanController extends RestfulController
   public function semua_pinjaman()
   {
     $model = new MPinjaman();
+    $model->orderBy('id', 'DESC');
     $pinjaman = $model->findAll();
     return $this->responseHasil(200, true, $pinjaman);
   }
