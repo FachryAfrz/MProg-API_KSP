@@ -69,8 +69,24 @@ class SimpananController extends RestfulController
       'nominal_simpanan' => $tb_simpanan['nominal_simpanan'] - $this->request->getVar('nominal_simpanan'),
     ];
 
-    $model->update($id_simpanan, $data);
-    $simpanan = $model->find($id_simpanan);
+    if ($tb_simpanan['nominal_simpanan'] < $this->request->getVar('nominal_simpanan')) {
+      return $this->responseHasil(420, false, 'Simpanan tidak cukup!');
+    } else {
+      $model->update($id_simpanan, $data);
+      $simpanan = $model->find($id_simpanan);
+
+      $dataTransaksi = [
+        'id_transaksi' => $id_simpanan,
+        'jenis_transaksi' => 'Tarik Simpanan',
+        'nama_user' => $tb_simpanan['nama_user'],
+        'nominal_transaksi' => $this->request->getVar('nominal_simpanan'),
+        'tanggal_transaksi' => date('d M', time()),
+      ];
+
+
+      $modelTransaksi = new MTransaksi();
+      $modelTransaksi->insert($dataTransaksi);
+    }
 
     if ($model->where(['id_simpanan' => $id_simpanan])->first()['nominal_simpanan'] <= 0) {
       $model->delete($id_simpanan);

@@ -1,0 +1,7 @@
+ERROR - 2022-06-18 09:38:10 --> Operand should contain 1 column(s)
+ERROR - 2022-06-18 09:40:09 --> Operand should contain 1 column(s)
+ERROR - 2022-06-18 10:09:35 --> Column 'nominal_transaksi' cannot be null
+ERROR - 2022-06-18 10:11:09 --> Column 'nominal_transaksi' cannot be null
+ERROR - 2022-06-18 10:11:55 --> Column 'nominal_transaksi' cannot be null
+ERROR - 2022-06-18 10:14:40 --> Column 'nominal_transaksi' cannot be null
+ERROR - 2022-06-18 10:15:37 --> Column 'nominal_transaksi' cannot be null

@@ -89,12 +89,29 @@ class PinjamanController extends RestfulController
       'nominal_pinjaman' => $tb_pinjaman['nominal_pinjaman'] - $this->request->getVar('nominal_pinjaman'),
     ];
 
-    $model->update($id_pinjaman, $data);
-    $pinjaman = $model->find($id_pinjaman);
+    if ($this->request->getVar('nominal_pinjaman') > $tb_pinjaman['nominal_pinjaman']) {
+      return $this->responseHasil(420, false, 'Angsuran terlalu banyak!');
+    } else {
+      $model->update($id_pinjaman, $data);
+      $pinjaman = $model->find($id_pinjaman);
 
-    if ($model->where(['id_pinjaman' => $id_pinjaman])->first()['nominal_pinjaman'] <= 0) {
-      $model->delete($id_pinjaman);
+      $dataTransaksi = [
+        'id_transaksi' => $id_pinjaman,
+        'jenis_transaksi' => 'Angsur Pinjaman',
+        'nama_user' => $tb_pinjaman['nama_user'],
+        'nominal_transaksi' => $this->request->getVar('nominal_pinjaman'),
+        'tanggal_transaksi' => date('d M', time()),
+      ];
+
+
+      $modelTransaksi = new MTransaksi();
+      $modelTransaksi->insert($dataTransaksi);
+
+      if ($model->where(['id_pinjaman' => $id_pinjaman])->first()['nominal_pinjaman'] <= 0) {
+        $model->delete($id_pinjaman);
+      }
     }
+
 
     return $this->responseHasil(200, true, $pinjaman);
   }
