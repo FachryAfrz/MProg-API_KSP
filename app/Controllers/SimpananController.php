@@ -94,4 +94,27 @@ class SimpananController extends RestfulController
 
     return $this->responseHasil(200, true, $simpanan);
   }
+
+  public function tarik_semua_simpanan($id_simpanan)
+  {
+    $model = new MSimpanan();
+
+    $tb_simpanan = $model->where(['id_simpanan' => $id_simpanan])->first();
+
+    $dataTransaksi = [
+      'id_transaksi' => uniqid('T'),
+      'jenis_transaksi' => 'Tarik Simpanan',
+      'nama_user' => $tb_simpanan['nama_user'],
+      'nominal_transaksi' => $tb_simpanan['nominal_simpanan'],
+      'tanggal_transaksi' => date('d M', time()),
+    ];
+
+    $modelTransaksi = new MTransaksi();
+    $modelTransaksi->insert($dataTransaksi);
+
+    $model->delete($id_simpanan);
+
+    $simpanan = $model->find($id_simpanan);
+    return $this->responseHasil(200, true, $simpanan);
+  }
 }

@@ -45,6 +45,7 @@ $routes->group('simpan', function ($routes) {
     $routes->get('/', 'SimpananController::semua_simpanan');
     $routes->get('(:segment)', 'SimpananController::detail_simpanan/$1');
     $routes->put('(:segment)', 'SimpananController::tarik_simpanan/$1');
+    $routes->delete('(:segment)', 'SimpananController::tarik_semua_simpanan/$1');
 });
 
 $routes->get('/total_simpanan', 'SimpananController::total_simpanan');
