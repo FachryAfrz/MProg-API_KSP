@@ -67,7 +67,9 @@ class PinjamanController extends RestfulController
     $TotalSimpanan = $ModelSimpanan->select('sum(nominal_simpanan) as nominal_simpanan')->first();
     $TotalPinjaman = $ModelPinjaman->select('sum(nominal_pinjaman) as nominal_pinjaman')->first();
 
-    $selisih = array_sum($TotalSimpanan) - array_sum($TotalPinjaman);
+    $selisih = [
+      'selisih' => array_sum($TotalSimpanan) - array_sum($TotalPinjaman)
+    ];
 
     return $this->responseHasil(200, true, $selisih);
   }
