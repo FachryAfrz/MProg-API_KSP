@@ -10,8 +10,8 @@ class TransaksiController extends RestfulController
   public function semua_transaksi()
   {
     $model = new MTransaksi();
-    $model->orderBy('id', 'DESC');
-    $transaksi = $model->findAll();
+    $model->orderBy('id', 'DESC')->limit(10);
+    $transaksi = $model->find();
 
     return $this->responseHasil(200, true, $transaksi);
   }

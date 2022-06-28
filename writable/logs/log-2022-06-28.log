@@ -1,0 +1,12 @@
+CRITICAL - 2022-06-28 23:12:57 --> Call to a member function limit() on string
+in APPPATH\Controllers\TransaksiController.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiController->semua_transaksi()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-28 23:13:01 --> Call to a member function limit() on string
+in APPPATH\Controllers\TransaksiController.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\TransaksiController->semua_transaksi()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiController))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
