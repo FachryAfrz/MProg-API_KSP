@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2022 at 07:59 AM
+-- Generation Time: Jun 28, 2022 at 08:11 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.23
 
@@ -41,8 +41,8 @@ CREATE TABLE `pinjaman` (
 --
 
 INSERT INTO `pinjaman` (`id`, `id_pinjaman`, `nama_user`, `jenis_pinjaman`, `nominal_pinjaman`, `tanggal_pinjaman`) VALUES
-(26, 'P62ad67e3131da', 'Ayu Intan Putri Maharani', 'Menengah', 3000000, '14 Jun'),
-(27, 'P62ad6826624cb', 'Novan Rizkianto', 'Full', 12500000, '16 Jun');
+(32, 'P62ba99b6064e5', 'Novan Rizkianto', 'Menengah', 3350000, '28 Jun'),
+(33, 'P62ba99efefcfe', 'Roseanita Maharani Endharu', 'Full', 4455000, '28 Jun');
 
 -- --------------------------------------------------------
 
@@ -64,9 +64,9 @@ CREATE TABLE `simpanan` (
 --
 
 INSERT INTO `simpanan` (`id`, `id_simpanan`, `nama_user`, `jenis_simpanan`, `nominal_simpanan`, `tanggal_simpanan`) VALUES
-(32, 'S62ad67ce6e822', 'Hilman Hidayat', 'Pokok', 9000000, '11 Jun'),
-(33, 'S62ad6814d54dd', 'Roseanita Maharani Endharu', 'Wajib', 15000000, '15 Jun'),
-(34, 'S62ad683a57079', 'Fachry Dwi Afriza', 'Wajib', 140000000, '18 Jun');
+(50, 'S62ba999b8be15', 'Hilman Hidayat', 'Sukarela', 5500000, '28 Jun'),
+(51, 'S62ba99d4aad0b', 'Ayu Intan Putri Maharani', 'Pokok', 6200000, '28 Jun'),
+(52, 'S62ba9a022e777', 'Fachry Dwi Afriza', 'Wajib', 14420000, '28 Jun');
 
 -- --------------------------------------------------------
 
@@ -88,11 +88,11 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id`, `id_transaksi`, `jenis_transaksi`, `nama_user`, `nominal_transaksi`, `tanggal_transaksi`) VALUES
-(40, 'S62ad67ce6e822', 'Simpanan', 'Hilman Hidayat', 9000000, '11 Jun'),
-(41, 'P62ad67e3131da', 'Pinjaman', 'Ayu Intan Putri Maharani', 3000000, '14 Jun'),
-(42, 'S62ad6814d54dd', 'Simpanan', 'Roseanita Maharani Endharu', 15000000, '15 Jun'),
-(43, 'P62ad6826624cb', 'Pinjaman', 'Novan Rizkianto', 12500000, '16 Jun'),
-(44, 'S62ad683a57079', 'Simpanan', 'Fachry Dwi Afriza', 140000000, '18 Jun');
+(75, 'S62ba999b8be15', 'Simpanan', 'Hilman Hidayat', 5500000, '28 Jun'),
+(76, 'P62ba99b6064e5', 'Pinjaman', 'Novan Rizkianto', 3350000, '28 Jun'),
+(77, 'S62ba99d4aad0b', 'Simpanan', 'Ayu Intan Putri Maharani', 6200000, '28 Jun'),
+(78, 'P62ba99efefcfe', 'Pinjaman', 'Roseanita Maharani Endharu', 4455000, '28 Jun'),
+(79, 'S62ba9a022e777', 'Simpanan', 'Fachry Dwi Afriza', 14420000, '28 Jun');
 
 -- --------------------------------------------------------
 
@@ -115,7 +115,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `id_user`, `nama`, `email`, `password`) VALUES
 (5, 'K62ab312392d30', 'Max', 'maxchamp@gmail.com', '$2y$10$RNLzBWVwtknvQWICorDDF.eX2ivAx6GXzra.wOvYkNfDfbnFuRtf6'),
 (6, 'K62ac54db5e141', 'Lewis Hamilton', 'lewis@gmail.com', '$2y$10$mQ6I/PvwapkrCHIGr8zht.mwMUw4eRtxMoucWi8GprgEg6bBBBFVK'),
-(10, 'K62aca96aa45b6', 'Fachry Dwi', 'fachry@gmail.com', '$2y$10$PAD3/i.m9h0L02paJSinz.vyBkMl9IxyOjiu7.5qKmQPny.w5C4c.');
+(10, 'K62aca96aa45b6', 'Fachry Dwi Afriza', 'fachry@gmail.com', '$2y$10$PAD3/i.m9h0L02paJSinz.vyBkMl9IxyOjiu7.5qKmQPny.w5C4c.');
 
 -- --------------------------------------------------------
 
@@ -142,7 +142,19 @@ INSERT INTO `user_token` (`id`, `user_id`, `auth_key`) VALUES
 (6, '10', 'Cs23MwPpavvhN2puULAIhgS097fhvI3aWdJYxQ4bTs4QaoxYbqopIJRJi5QOMyCrvrMuhZ8sP88XnK2nFoJUsVVtlcR8syb2sPnz'),
 (7, '10', 'F8i5Zsonm93P9sOVID0wRpKcC6RFAmloKnVo0YHh9QstzIu5OiZgh7CMRaDdUbCJKj1gQNy2h4ZDM01Rdb3d4mad6e9aeoCKuMvE'),
 (8, '10', 'B7f2GssrADUfrjj7ysbd1DlK7sdiA6yG5shlvh52CyWsbHsh5RATiES3dBsYbvsjaKfawL2l64Qts3zttPSYIT4csYifdgSh7odK'),
-(9, '10', 'VlI21xbf7PUxRlGG48IjAa6qbtJNhJtZwfsHaLRciVecUl1mpIgdrrd53GCjsmau0mckYJrauk6lHsTid7L45Ls46eWOdhssfnVr');
+(9, '10', 'VlI21xbf7PUxRlGG48IjAa6qbtJNhJtZwfsHaLRciVecUl1mpIgdrrd53GCjsmau0mckYJrauk6lHsTid7L45Ls46eWOdhssfnVr'),
+(10, '10', '20TrzQfksPr3YX29SigjnwjDMlf3AHgcDwQfcd6uRga3aD910iltQt6gg5v5JUuDd0eF9mMKodX0VMxj5ziy2gJEPxTREVcuVZna'),
+(11, '10', 'BkazgCzQwpGKfa54iZU5dowD2OHz1dYxJLqJSLKemR1MqdsVXdcLds1IsZNsNuuwVgkNstPzgFiTTf3PqtnP3dkE4ONBLIU03Te4'),
+(12, '10', 'vdYn6wBzfmYBtFCdvqZwgAB2QwhlCAEXMlRw4UMuMoh60WvJJFGCkq3YormQMiPBBn4Hyxkpt0CCWmbLEVEsiTrGTgi5zKllHplk'),
+(13, '10', '4iKQREn47Wpo62YrbIqtPTseNBSd5jyQQPiOdq4Y6UodznlGWcwykrJ3oKHkXXDajnvLFsIq70IpIhqXEm0dkDROVkaTy8SED0Oe'),
+(14, '10', 'd5bnpN8rm6gELNOXRYqCdKD4c4Ne6CJciRCZXl4oUXt5K8VR9R0dD6bCYHXZdGi8thhMcdixo675wcJaD1e7UroPFnW2YTHhC2cK'),
+(15, '10', 'WzswR3cm48Drgb8NBdWpAhvXddtdeCsNhpun3WAXGSJZUy9ZkQSwEdFORpHupsjlaa7isVirWWJhsHsqag3EAdF8RcsIocCHCbwl'),
+(16, '10', 'eCUZ8MsNQYnGnpwNKgbR7EnIBk0amrObK7AHYfHBKDJTkOsTIMgNd4dutDZ7pYAAbUxZczHRWuzhjgrJoUjEdUZsEnmdIGbqOZkQ'),
+(17, '10', 'cTZVU3GgFqB1tE9f80GihVC6OZFSUs6pCtr4t5tBMAmP39Hd5vAiyjLudr2h6omH0ZkVr3WPlO64hqT6eHOhJjFaFxCvE52K5KXi'),
+(18, '10', 'pftd4543k7qVl2xP6Qjs8OvK8L7kOGWejJPd9XduRoA1JBX3dYyjdPhdFOvrjkL2wcTLdcE4eyhA5z8JGkIObOdnds3X3OfbisVz'),
+(19, '10', 'CuBtrx1YD2bqQPBTvQCSr23FagYSaPo4d4EKHimMy2dIpsMoiXjp6OzC2shlmBQlT5NZ6BRYvyKQlksqCdYsldSOQlzGQSAY5Wkt'),
+(20, '10', '4mCKFtvzG4gdhsr5NKrF8ssrWsCssvl5nSdsAolh2SxhvJcXs39uYUdsHRsZ2JSwQiCO73s8HgmaboQqxPFILtkTnVj7gmyB9gQY'),
+(21, '10', 'T3KmxYhI2iaWtcmMw37Z6VjkNdYQ1w6RGiuH52V6KcuUTGLNQ5oAwdbeS5U0be1GlSIn0aarnMQmdTbnGznaQbVS0Af9mnd98M9V');
 
 --
 -- Indexes for dumped tables
@@ -186,19 +198,19 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT for table `pinjaman`
 --
 ALTER TABLE `pinjaman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `simpanan`
 --
 ALTER TABLE `simpanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -210,7 +222,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user_token`
 --
 ALTER TABLE `user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
