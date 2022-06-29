@@ -1,4 +1,4 @@
-# REST API Koperasi Simpan Pinjam (CodeIgniter 4)
+# REST API Koperasi Simpan Pinjam - CodeIgniter 4
 
 API ini bertujuan untuk memenuhi tugas UAS Semester 4 pada mata kuliah Mobile Programming di Universitas Bina Sarana Informatika.
 
