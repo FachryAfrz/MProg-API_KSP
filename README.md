@@ -30,15 +30,15 @@ API ini bertujuan untuk memenuhi tugas UAS Semester 4 pada mata kuliah Mobile Pr
 
   - Detail Simpanan
 
-    `GET` - `http://(IPv4)/MProg-API_KSP/public/simpan/(id)`
+    `GET` - `http://(IPv4)/MProg-API_KSP/public/simpan/(id_simpanan)`
 
   - Tarik Simpanan
 
-    `PUT` - `http://(IPv4)/MProg-API_KSP/public/simpan/(id)`
+    `PUT` - `http://(IPv4)/MProg-API_KSP/public/simpan/(id_simpanan)`
 
   - Tarik Seluruh Nominal Simpanan
 
-    `DELETE` - `http://(IPv4)/MProg-API_KSP/public/simpan/(id)`
+    `DELETE` - `http://(IPv4)/MProg-API_KSP/public/simpan/(id_simpanan)`
 
 - Pinjam
 
@@ -56,11 +56,11 @@ API ini bertujuan untuk memenuhi tugas UAS Semester 4 pada mata kuliah Mobile Pr
 
   - Detail Pinjaman
 
-    `GET` - `http://(IPv4)/MProg-API_KSP/public/pinjam/(id)`
+    `GET` - `http://(IPv4)/MProg-API_KSP/public/pinjam/(id_pinjaman)`
 
   - Mengangsur Pinjaman
 
-    `PUT` - `http://(IPv4)/MProg-API_KSP/public/pinjam/(id)`
+    `PUT` - `http://(IPv4)/MProg-API_KSP/public/pinjam/(id_pinjaman)`
 
 - Informasi Selisih
 
